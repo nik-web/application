@@ -10,7 +10,7 @@ This application is meant to be used as a starting place for the own web applica
 The easiest way to create a new application for de_DE with Laminas MVC is 
 to use this Repository on GitHub
 https://github.com/nik-web/application.git 
-and Composer (https://getcomposer.org/).
+and [Composer](https://getcomposer.org/).
 
 ### To create your new application
 Folder to clone into:
@@ -57,8 +57,6 @@ This will start the cli-server on port 8080, and bind it to all network
 interfaces. You can then visit the site at:
 
 http://localhost:8080/
-
-- which will bring up Laminas MVC Skeleton welcome page.
 
 **Note:** The built-in CLI server is *for development only*.
 
