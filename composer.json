@@ -1,0 +1,43 @@
+{
+    "name": "nik-web/application",
+    "description": "Laminas MVC Application",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "laminas",
+        "mvc",
+        "base",
+        "application",
+        "framework"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\": "module/Application/test/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Niklaus Höpfner",
+            "email": "editor@nik-web.net"
+        }
+    ],
+    "require-dev": {
+        "laminas/laminas-component-installer": "^3.3",
+        "laminas/laminas-test": "^4.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "laminas/laminas-component-installer": true
+        }
+    },
+    "require": {
+        "php": "~8.1.0 || ~8.2.0",
+        "laminas/laminas-mvc": "^3.6",
+        "laminas/laminas-development-mode": "^3.11"
+    }
+}

@@ -1,0 +1,8 @@
+# This file is part of application.
+# ignore this folders
+
+/.phpunit.cache/
+data/cache/*
+!data/cache/.gitkeep
+/nbproject/
+/vendor/
