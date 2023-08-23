@@ -19,6 +19,7 @@
  */
 
 return [
+    'Laminas\Navigation',
     'Laminas\Router',
     'Laminas\Validator',
     'Application',

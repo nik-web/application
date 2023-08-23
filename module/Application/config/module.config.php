@@ -21,7 +21,14 @@ namespace Application;
 use Laminas\Router\Http\Literal;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 
-return [   
+return [
+    'service_manager' => [
+        'factories' => [
+            'main_nav'   => Service\Factory\MainNavFactory::class,
+            'footer_nav' => Service\Factory\FooterNavFactory::class,
+            'brand_nav'  => Service\Factory\BrandNavFactory::class,
+        ],
+    ],  
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
@@ -61,6 +68,33 @@ return [
             ],
         ],
     ],
+    'navigation' => [
+        'brand_nav' => [
+            [
+                'label' => 'application',
+                'route' => 'home',
+            ],
+        ],
+        'main_nav'  => [
+            [
+                'label' => 'Home',
+                'route' => 'home',
+                'order' => 10,
+            ],
+        ],
+        'footer_nav'  => [
+            [
+                'label' => 'Impressum',
+                'route' => 'imprint',
+                'order' => 10,
+            ],
+            [
+                'label' => 'Datenschutz',
+                'route' => 'privacy-policy',
+                'order' => 15,
+            ],
+        ],
+    ],
     'view_manager' => [        
         'doctype'            => 'HTML5',
         'exception_template' => 'error/index',
@@ -71,7 +105,12 @@ return [
             'error/404'                        => __DIR__ . '/../view/error/404.phtml',
             'application/index/index'          => __DIR__ . '/../view/application/index/index.phtml',
             'application/index/imprint'        => __DIR__ . '/../view/application/index/imprint.phtml',
-            'application/index/privacy-policy' => __DIR__ . '/../view/application/index/privacy-policy.phtml',
+            'application/index/privacy-policy' => __DIR__ . '/../view/application/index/privacy-policy.phtml',            
+            'partial/nav-bar/brand-base'       => __DIR__ . '/../view/partial/nav-bar/brand-base.phtml',
+            'partial/nav-bar/footer-base'      => __DIR__ . '/../view/partial/nav-bar/footer-base.phtml',
+            'partial/nav-bar/main-no-script'   => __DIR__ . '/../view/partial/nav-bar/main-no-script.phtml',
+            'partial/nav-bar/brand-base'       => __DIR__ . '/../view/partial/nav-bar/brand-base.phtml',
+            'partial/meta/app-icons'           => __DIR__ . '/../view/partial/meta/app-icons.phtml',
         ],
         'template_path_stack' => [
             __DIR__ . '/../view',
