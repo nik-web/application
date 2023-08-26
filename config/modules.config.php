@@ -19,8 +19,18 @@
  */
 
 return [
+    'Laminas\Mvc\Plugin\FlashMessenger',
+    'Laminas\Mail',
+    'Laminas\Session',
+    'Laminas\Mvc\I18n',
+    'Laminas\Form',
+    'Laminas\I18n',
+    'Laminas\InputFilter',
+    'Laminas\Filter',
+    'Laminas\Hydrator',
     'Laminas\Navigation',
     'Laminas\Router',
     'Laminas\Validator',
     'Application',
+    'Contact',
 ];
