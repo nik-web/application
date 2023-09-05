@@ -19,6 +19,8 @@
  */
 
 return [
+    'Laminas\Mvc\Plugin\Identity',
+    'Laminas\Db',
     'Laminas\Mvc\Plugin\FlashMessenger',
     'Laminas\Mail',
     'Laminas\Session',
@@ -33,4 +35,5 @@ return [
     'Laminas\Validator',
     'Application',
     'Contact',
+    'User',
 ];

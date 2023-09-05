@@ -25,18 +25,22 @@
 
 declare(strict_types=1);
 
-use Laminas\Session\Container;
 use Laminas\Session\Config\SessionConfig;
 use Laminas\Session\Storage\SessionArrayStorage;
 use Laminas\Session\Validator\RemoteAddr;
 use Laminas\Session\Validator\HttpUserAgent;
 
-return [    
+return [
+    // Session configuration
+    'session_config'  => [
+        'cookie_lifetime' => 60*60*24,// Session cookie will expire in 1 day.
+        'gc_maxlifetime'  => 60*60*24*30,// Session data will be stored on server maximum for 30 days.
+    ],
     'session_manager' => [
         'config'    => [
             'class'   => SessionConfig::class,
             'options' => [
-                'name' => 'web-design-set',// Specifies the name of the session which is used as cookie name.
+                'name' => 'application',// Specifies the name of the session which is used as cookie name.
             ],
         ],
         // Session validators (used for security).
@@ -45,20 +49,12 @@ return [
             HttpUserAgent::class,
         ],
     ],
-    // Session configuration
-    'session_containers' => [
-        Container::class,
-    ],
-    'session_config'  => [
-        'cookie_lifetime' => 60*60*24,// Session cookie will expire in 1 day.
-        'gc_maxlifetime'  => 60*60*24*30,// Session data will be stored on server maximum for 30 days.
-    ],
     'session_storage' => [
         'type' => SessionArrayStorage::class,
-    ],            
+    ],
     'view_manager' => [
         'template_map'        => [
-            'partials/nav-bars/pagination-control' => __DIR__ . '/../../module/Application/view/partial/nav-bar/pagination-control.phtml',
+            //'partials/nav-bars/pagination-control' => __DIR__ . '/../../module/Application/view/partial/nav-bar/pagination-control.phtml',
         ],
     ],
     'view_helper_config' => [

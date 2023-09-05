@@ -39,7 +39,6 @@ class IndexController extends AbstractActionController {
      */
     protected $mailSender;
 
-
     /**
      * Constructor
      * 

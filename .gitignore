@@ -7,3 +7,7 @@ data/cache/*
 /nbproject/
 /vendor/
 /Images/
+
+# Ignore copies of files
+*_1.phtml
+*_1.php
